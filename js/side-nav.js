@@ -1,49 +1,39 @@
-/* ===== js / page-top.js ===== */
+/* ===== js / side-nav.js ===== */
+export function initSideNav() {
+  const galleryTrigger = document.querySelector(".js-gallery-trigger");
+  const accessTrigger = document.querySelector(".js-access-trigger");
+  const sideNav = document.querySelector(".js-side-nav");
 
-/**
- * ページトップ戻るボタンを制御する
- */
-export function initPageTop() {
-  const pageTopBtn = document.querySelector(".js-page-top");
-
-  if (!pageTopBtn) return;
-
-  const SHOW_THRESHOLD = 300;
-
-  const mediaQuery = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
+  if (!sideNav || !galleryTrigger || !accessTrigger) return;
 
   let isRunning = false;
 
-  const updatePageTopVisibility = () => {
-    const shouldShow = window.scrollY >= SHOW_THRESHOLD;
+  const updateSideNav = () => {
+    const galleryRect = galleryTrigger.getBoundingClientRect();
+    const accessRect = accessTrigger.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
 
-    pageTopBtn.classList.toggle("is-visible", shouldShow);
-    pageTopBtn.disabled = !shouldShow;
+    const shouldShow =
+      galleryRect.top <= viewportHeight &&
+      accessRect.top > viewportHeight;
+
+    sideNav.classList.toggle("is-visible", shouldShow);
+    sideNav.inert = !shouldShow;
   };
 
-  const handleScroll = () => {
+  const requestUpdate = () => {
     if (isRunning) return;
 
     isRunning = true;
 
-    window.requestAnimationFrame(() => {
-      updatePageTopVisibility();
+    requestAnimationFrame(() => {
+      updateSideNav();
       isRunning = false;
     });
   };
 
-  window.addEventListener("scroll", handleScroll, {
-    passive: true,
-  });
+  updateSideNav();
 
-  pageTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: mediaQuery.matches ? "auto" : "smooth",
-    });
-  });
-
-  updatePageTopVisibility();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
 }
