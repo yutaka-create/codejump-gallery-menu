@@ -1,0 +1,40 @@
+/* ===== layout / _header.scss ===== */
+@use "../foundation/vars" as v;
+
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: v.$z-index-header;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
+
+  &__logo {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+    z-index: v.$z-index-header-control;
+    width: 140px;
+  }
+
+  &__hamburger {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    z-index: v.$z-index-header-control;
+  }
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

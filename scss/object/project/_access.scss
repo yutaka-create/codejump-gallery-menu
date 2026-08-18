@@ -1,0 +1,46 @@
+/* ===== object / project / _access.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-access {
+  margin-bottom: 480px;
+  text-align: center;
+
+  @include m.mq-sp {
+    margin-bottom: 280px;
+  }
+
+  &__heading {
+    margin-bottom: v.$space-section-heading-margin-bottom;
+  }
+
+  &__venue {
+    font-size: f.rem(v.$font-size-28);
+    font-weight: v.$font-weight-regular;
+    margin-bottom: 20px;
+  }
+
+  &__address {
+    margin-bottom: 20px;
+  }
+
+  &__contact {
+    margin-bottom: 30px;
+  }
+
+  &__map-link {
+    display: inline-block;
+    padding: 15px 82px;
+    border: 1px solid v.$color-border-main;
+    transition: background-color 0.3s ease;
+
+    @include m.hover {
+      background-color: v.$color-bg-base;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}

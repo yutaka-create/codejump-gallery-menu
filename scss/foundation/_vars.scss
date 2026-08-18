@@ -1,0 +1,116 @@
+/* ===== foundation / _vars.scss ===== */
+
+// ==============================
+// Color
+// ==============================
+
+// Primitive color
+$color-black: #050507;
+$color-white: #ffffff;
+$color-gray: #7d7d7d;
+
+// Semantic color
+$color-text-main: $color-white;
+$color-bg-base: $color-black;
+$color-border-main: $color-white;
+$color-border-muted: $color-gray;
+
+// ==============================
+// Font Family
+// ==============================
+
+$font-family-base: "Source Sans Pro",
+  "Hiragino Kaku Gothic ProN",
+  "Hiragino Sans",
+  "Yu Gothic",
+  "YuGothic",
+  "Meiryo",
+  sans-serif;
+
+// ==============================
+// Font Size
+// ==============================
+
+// Primitive font size
+$font-size-12: 12px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-24: 24px;
+$font-size-28: 28px;
+$font-size-32: 32px;
+$font-size-40: 40px;
+$font-size-48: 48px;
+$font-size-60: 60px;
+$font-size-100: 100px;
+
+// Semantic font size
+$font-size-base: $font-size-16;
+
+$font-size-site-title-pc: $font-size-100;
+$font-size-site-title-sp: $font-size-48;
+
+$font-size-section-heading-pc: $font-size-60;
+$font-size-section-heading-sp: $font-size-32;
+
+// ==============================
+// Font Weight
+// ==============================
+
+// Primitive font weight
+$font-weight-300: 300;
+$font-weight-400: 400;
+
+// Semantic font weight
+$font-weight-base: $font-weight-300;
+$font-weight-regular: $font-weight-400;
+
+// ==============================
+// Line Height
+// ==============================
+
+// Semantic line height
+$line-height-base: 1.25;
+$line-height-site-title-pc: 1.26;
+$line-height-site-title-sp: 1.25;
+$line-height-information-detail-pc: 1.2778;
+$line-height-footer-info: 1.6;
+
+// ==============================
+// Letter Spacing
+// ==============================
+
+// Semantic letter spacing
+$letter-spacing-heading: 0.03em;
+
+// ==============================
+// Spacing
+// ==============================
+
+// Semantic spacing
+$space-section-heading-margin-bottom: 45px;
+
+// ==============================
+// Layout
+// ==============================
+
+// Semantic layout
+$layout-container-max: 800px;
+$layout-gutter: 30px;
+
+// ==============================
+// Breakpoint
+// ==============================
+
+// PC表示の開始幅
+$breakpoint-pc-min: 900px;
+
+// ==============================
+// z-index
+// ==============================
+
+// Semantic z-index
+$z-index-side-links: 10;
+$z-index-page-top: 20;
+$z-index-header: 100;
+$z-index-global-menu: 110;
+$z-index-header-control: 120;

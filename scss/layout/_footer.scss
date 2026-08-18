@@ -1,0 +1,57 @@
+/* ===== layout / _footer.scss ===== */
+@use "../foundation/function" as f;
+@use "../foundation/vars" as v;
+@use "../foundation/mixin" as m;
+
+
+.l-footer {
+  font-size: f.rem(v.$font-size-12);
+  padding-block: 80px;
+  padding-inline: 30px;
+  border-top: 1px solid v.$color-border-main;
+
+  @include m.mq-sp {
+    padding-block: 60px;
+  }
+
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include m.mq-sp {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+
+
+  &__address {
+    line-height: v.$line-height-footer-info;
+    margin-bottom: 30px;
+  }
+
+
+  &__sns-list {
+    display: flex;
+    column-gap: 15px;
+  }
+
+
+  &__meta {
+    align-self: flex-end;
+    display: flex;
+    column-gap: 30px;
+
+    @include m.mq-sp {
+      align-self: flex-start;
+    }
+  }
+
+
+  &__copyright {
+    small {
+      font-size: inherit;
+    }
+  }
+}

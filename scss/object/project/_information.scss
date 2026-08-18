@@ -1,0 +1,49 @@
+/* ===== object / project / _information.scss ===== */
+
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-information {
+  margin-bottom: 140px;
+  text-align: center;
+
+  @include m.mq-sp {
+    margin-bottom: 80px;
+  }
+
+  &__heading {
+    margin-bottom: v.$space-section-heading-margin-bottom;
+  }
+
+  &__date-en {
+    font-size: f.rem(v.$font-size-24);
+
+    @include m.mq-sp {
+      font-size: f.rem(v.$font-size-16);
+    }
+  }
+
+  &__hours-en,
+  &__date-ja,
+  &__hours-ja {
+    font-size: f.rem(v.$font-size-18);
+    line-height: v.$line-height-information-detail-pc;
+
+    @include m.mq-sp {
+      font-size: f.rem(v.$font-size-16);
+      line-height: v.$line-height-base;
+    }
+  }
+
+  &__venue {
+    font-size: f.rem(v.$font-size-40);
+    font-weight: v.$font-weight-regular;
+    margin-block: 20px;
+
+    @include m.mq-sp {
+      font-size: f.rem(v.$font-size-32);
+    }
+  }
+
+}

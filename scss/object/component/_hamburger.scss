@@ -1,0 +1,51 @@
+/* ===== object / component / _hamburger.scss ===== */
+
+.c-hamburger {
+  width: 42px;
+  height: 42px;
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 1px;
+    background-color: currentColor;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  &__line--top {
+    transform: translate(-50%, -11px);
+  }
+
+  &__line--middle {
+    transform: translate(-50%, -1px);
+  }
+
+  &__line--bottom {
+    transform: translate(-50%, 10px);
+  }
+
+  &.is-open {
+    .c-hamburger__line--top {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .c-hamburger__line--middle {
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .c-hamburger__line--bottom {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__line {
+      transition: none;
+    }
+  }
+}

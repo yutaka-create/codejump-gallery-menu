@@ -1,0 +1,81 @@
+/* ===== object / utility / _animation.scss ===== */
+
+// ==============================
+// Reveal animation
+// ==============================
+
+.u-reveal-left {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition:
+        clip-path 1s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 1s ease;
+
+    &.is-animated {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+// ==============================
+// Fade animation
+// ==============================
+
+.u-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        transform 1s ease-out,
+        opacity 1s ease;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.u-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition:
+        transform 0.8s ease-out,
+        opacity 0.8s ease;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.u-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+        transform 0.8s ease-out,
+        opacity 0.8s ease;
+
+    &.is-animated {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// ==============================
+// Reduced motion
+// ==============================
+
+@media (prefers-reduced-motion: reduce) {
+    .u-reveal-left {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transition: none;
+    }
+
+    .u-fade-up,
+    .u-fade-left,
+    .u-fade-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

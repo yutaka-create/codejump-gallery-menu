@@ -1,0 +1,42 @@
+/* ===== object / project / _global-menu.scss ===== */
+@use "../../foundation/vars" as v;
+
+.p-global-menu {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-index-global-menu;
+  overflow-y: auto;
+  padding-top: 90px;
+  background-color: v.$color-bg-base;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition:
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+
+  &__nav {
+    width: fit-content;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__link {
+    display: block;
+    font-weight: v.$font-weight-regular;
+  }
+
+  &.is-open {
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

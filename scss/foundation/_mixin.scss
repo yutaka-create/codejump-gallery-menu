@@ -1,0 +1,19 @@
+/* ===== foundation / _mixin.scss ===== */
+
+@use "vars" as v;
+
+// SP・タブレット表示用のメディアクエリ
+@mixin mq-sp {
+  @media screen and (max-width: (v.$breakpoint-pc-min - 1px)) {
+    @content;
+  }
+}
+
+// hover可能なデバイスのみ適用
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}

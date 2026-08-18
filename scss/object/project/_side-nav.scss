@@ -1,0 +1,61 @@
+/* ===== object / project / _side-nav.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-side-nav {
+  position: fixed;
+  bottom: 200px;
+  right: 0;
+  z-index: v.$z-index-side-links;
+  transform: translateX(100%);
+  visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+
+  @include m.mq-sp {
+    display: none;
+  }
+
+  &__item + &__item {
+    .p-side-nav__link {
+      border-top: none;
+    }
+  }
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 165px;
+    border: 1px solid v.$color-border-main;
+    transition: opacity 0.3s ease;
+
+    @include m.hover {
+      opacity: 0.7;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &__text {
+    font-size: f.rem(14px);
+    line-height: 1.28571;
+    letter-spacing: 0.1em;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+  }
+
+  &.is-visible {
+    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

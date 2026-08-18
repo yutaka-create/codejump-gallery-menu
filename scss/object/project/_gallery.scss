@@ -1,0 +1,72 @@
+/* ===== object / project / _gallery.scss ===== */
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-gallery {
+  margin-bottom: 480px;
+
+  @include m.mq-sp {
+    margin-bottom: 280px;
+  }
+
+  &__heading {
+    margin-bottom: v.$space-section-heading-margin-bottom;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    @include m.mq-sp {
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    width: calc((100% - 30px) / 2);
+
+    @include m.mq-sp {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      aspect-ratio: 355 / 488;
+    }
+
+    &:nth-child(2) {
+      aspect-ratio: 355 / 235;
+    }
+
+    &:nth-child(3) {
+      aspect-ratio: 355 / 355;
+    }
+
+    &:nth-child(4) {
+      aspect-ratio: 355 / 533;
+    }
+
+    &:nth-child(5) {
+      aspect-ratio: 355 / 444;
+    }
+
+    &:nth-child(6) {
+      aspect-ratio: 355 / 235;
+    }
+
+    &:nth-child(even) {
+      align-self: flex-end;
+    }
+  }
+
+  &__picture {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

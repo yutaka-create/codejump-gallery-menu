@@ -1,0 +1,24 @@
+/* ===== object / project / _intro.scss ===== */
+@use "../../foundation/function" as f;
+@use "../../foundation/vars" as v;
+@use "../../foundation/mixin" as m;
+
+.p-intro {
+  padding-block: 100px;
+  text-align: center;
+
+  @include m.mq-sp {
+    padding-block: 50px;
+  }
+
+  &__heading {
+    font-size: f.rem(v.$font-size-site-title-pc);
+    line-height: v.$line-height-site-title-pc;
+    letter-spacing: v.$letter-spacing-heading;
+
+    @include m.mq-sp {
+      font-size: f.rem(v.$font-size-site-title-sp);
+      line-height: v.$line-height-site-title-sp;
+    }
+  }
+}
